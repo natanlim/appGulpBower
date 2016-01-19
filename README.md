@@ -6,24 +6,23 @@ Minimal configuration for gulp and bower to be used in web projects.
 
 What do you need to run it?
 
-Node
-Gulp
-Bower
-Compass
+- Node
+- Gulp
+- Bower
 
 How to use?
 
 Inside root folder:
 
-npm install
+`npm install`
 
 Inside the app folder:
 
-bower install
+`bower install`
 
 After, in terminal run:
 
-gulp
+`gulp`
 
 
 
