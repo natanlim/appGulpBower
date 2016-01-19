@@ -4,5 +4,12 @@
 
 Minimal configuration for gulp and bower to be used in web projects.
 
+What do you need to run it?
+
+Node
+Gulp
+Bower
+Compass
+
 
 
