@@ -11,5 +11,19 @@ Gulp
 Bower
 Compass
 
+How to use?
+
+Inside root folder:
+
+npm install
+
+Inside the app folder:
+
+bower install
+
+After, in terminal run:
+
+gulp
+
 
 
