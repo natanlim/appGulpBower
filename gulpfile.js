@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 	reload = browerSync.reload,
 	autoprefixer = require('gulp-autoprefixer'),
 	plumber = require('gulp-plumber'),
+	del = require('del'),
 	rename = require('gulp-rename');
 // //////////////////////////////////////////////////////////
 // SCRIPTS
@@ -47,12 +48,42 @@ gulp.task('html', function(){
 // Browser-Sync
 // //////////////////////////////////////////////////////////
 gulp.task('brower-sync', function(){
-	browerSync({
-		server:{
-			baseDir: './app/'
-		}
-	});
+	// .init starts the server
+  browerSync.init({
+    server: "./app",
+    port: 3010
+  });
 });
+gulp.task('build:serve', function(){
+	// .init starts the server
+  browerSync.init({
+    server: "./build",
+    port: 3010
+  });
+});
+// //////////////////////////////////////////////////////////
+// Tasks for production
+// //////////////////////////////////////////////////////////
+// Clear
+gulp.task('build:cleanfolder', function(){
+	del([
+		'build/**'
+	]);
+});
+// Copy
+gulp.task('build:copy', ['build:cleanfolder'], function(){
+	return gulp.src('app/**/*')
+	.pipe(gulp.dest('build/'));
+});
+// Delete files we do not need in project
+gulp.task('build:remove', ['build:copy'], function(cb){
+	del([
+		'build/scss',
+		'build/js/!(*.min.js)'
+	], cb);
+});
+
+gulp.task('build', ['build:copy', 'build:remove', 'build:serve']);
 // //////////////////////////////////////////////////////////
 // WATCH
 // //////////////////////////////////////////////////////////
