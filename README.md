@@ -1,3 +1,4 @@
 # appGulpBower
-Sample project to be used in projects, minimal configuration for gulp and bower
+
+Minimal configuration for gulp and bower to be used in web projects.
 
