@@ -22,5 +22,18 @@ After, in terminal run:
 
 `gulp`
 
+<hr>
+
+## Build
+
+`gulp build`
+
+`gulp build:copy`
+
+`gulp build:remove`
+
+`gulp build:cleanfolder`
+
+`gulp build:serve`
 
 
