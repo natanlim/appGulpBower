@@ -20,7 +20,7 @@ Inside the app folder:
 
 After, in terminal run:
 
-`gulp
+`gulp`
 
 
 
